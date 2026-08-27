@@ -21,7 +21,7 @@
 
 ```bash
 # Clone the repository
-git clone [https://github.com/RafiKhelalfa/EcoEdge-AI.git](https://github.com/RafiKhelalfa/EcoEdge-AI.git)
+git clone https://github.com/RafiKhelalfa/EcoEdge-AI.git
 cd EcoEdge-AI
 
 # Create virtual environment
