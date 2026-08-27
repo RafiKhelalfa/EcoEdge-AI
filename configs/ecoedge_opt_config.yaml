@@ -1,1 +1,15 @@
+optimization:
+  pruning:
+    amount: 0.3
+    structured: true
+  quantization:
+    type: "int8"
+    backend: "fbgemm"
+  distillation:
+    temperature: 4.0
+    alpha: 0.7
 
+export:
+  format: "onnx"
+  opset_version: 13
+  
