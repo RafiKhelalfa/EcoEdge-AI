@@ -4,6 +4,8 @@
 
 By combining **structural pruning**, **INT8 quantization**, and **knowledge distillation**, EcoEdge AI drastically reduces **memory footprint**, **latency**, and **power consumption** without sacrificing inference accuracy.
 
+---
+
 ## 🚀 Key Features
 
 ### Dynamic Pruning Engine
@@ -31,6 +33,8 @@ Clean Python architecture easily adaptable to:
 * Audio models
 * IoT tabular models
 
+---
+
 ## 📁 Repository Structure
 
 ```text
@@ -44,6 +48,23 @@ ecoedge-ai/
 ├── scripts/            # Training and benchmarking entrypoints
 └── tests/              # Unit test suite
 ```
+---
+
+## 📊 Performance & Benchmark Results
+
+EcoEdge AI drastically reduces edge model footprints and inference times using dynamic INT8 quantization and structured pruning.
+
+![EcoEdge AI Benchmark](benchmark_results.png)
+
+### Key Metrics Summary
+
+| Metric | Baseline (FP32) | EcoEdge AI (Optimized) | Improvement |
+| :--- | :--- | :--- | :--- |
+| **Inference Latency** | 18.10 ms | **6.70 ms** | **+63% Speedup** |
+| **Model File Size** | 42.69 MB | **15.79 MB** | **-63% Memory** |
+| **Execution Target** | CPU Baseline | CPU Edge Optimized | High Efficiency |
+
+---
 
 ## 🛠️ Quickstart
 
@@ -77,6 +98,7 @@ python scripts/run_benchmark.py
 ```bash
 python -m unittest discover tests
 ```
+---
 
 ## 📊 Benchmarking Output
 
@@ -90,6 +112,8 @@ The benchmark details:
 
 * **Inference Latency Reduction (ms)**
 * **Model Size Compression (MB)**
+
+---
 
 ## 📜 License
 
