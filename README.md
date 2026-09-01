@@ -5,15 +5,17 @@
 
 By combining **structural pruning**, **INT8 quantization**, and **knowledge distillation**, EcoEdge AI drastically reduces **memory footprint**, **latency**, and **power consumption** without sacrificing inference accuracy.
 
-🚀 Quick Start
+## 🚀 Quick Start
 --------------
 
 ### 1\. Installation
-
+```
 pip install ecoedge-ai
+```
 
 ### 2\. Basic Usage (Scikit-Learn Style)
 
+```
 import torch
 
 import torchvision.models as models
@@ -22,26 +24,24 @@ from ecoedge.compression import Pruner
 
 from ecoedge.export import ONNXExporter
 
-Load your PyTorch model
-=======================
+# Load your PyTorch model
 
 model = models.resnet18(pretrained=True)
 
-Prune 30% of Conv2d channels
-============================
+# Prune 30% of Conv2d channels
 
 pruner = Pruner(model)
 
 pruned_model = pruner.prune_l1_structured(amount=0.3)
 
-Export to ONNX for Edge deployment
-==================================
+# Export to ONNX for Edge deployment
 
 exporter = ONNXExporter(pruned_model)
 
 exporter.export("resnet18_edge.onnx")
+```
 
-📊 Performance & Benchmark Results
+## 📊 Performance & Benchmark Results
 ----------------------------------
 
 EcoEdge AI drastically reduces edge model footprints and inference times using dynamic INT8 quantization and structured pruning.
@@ -54,7 +54,7 @@ EcoEdge AI drastically reduces edge model footprints and inference times using d
 | **Model File Size** | 42.69 MB | **15.79 MB** | **-63% Memory** |
 | **Execution Target** | CPU Baseline | CPU Edge Optimized | High Efficiency |
 
-📜 License
+## 📜 License
 ----------
 
 Distributed under the **MIT License**.
