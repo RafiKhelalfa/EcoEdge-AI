@@ -9,6 +9,7 @@ class TestProfiling(unittest.TestCase):
 
     def setUp(self):
         self.model = torchvision.models.resnet18(num_classes=10)
+        self.model.eval()  # Évite les erreurs BatchNorm sur batch_size=1
         self.input_tensor = torch.randn(1, 3, 32, 32)
 
     def test_latency_meter(self):
