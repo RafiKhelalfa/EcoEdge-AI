@@ -11,7 +11,7 @@ class ONNXExporter:
         model: nn.Module,
         dummy_input: torch.Tensor,
         export_path: str,
-        opset_version: int = 13,
+        opset_version: int = 18,
     ) -> None:
         model.eval()
         torch.onnx.export(
@@ -27,6 +27,7 @@ class ONNXExporter:
                 "input": {0: "batch_size"},
                 "output": {0: "batch_size"},
             },
+            dynamo=False,
         )
         onnx_model = onnx.load(export_path)
         onnx.checker.check_model(onnx_model)
