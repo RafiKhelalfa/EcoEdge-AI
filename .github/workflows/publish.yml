@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/ecoedge
+      url: https://pypi.org/p/ecoedge-ai
     permissions:
-      id-token: write  # Obligatoire pour l'authentification OIDC sans mot de passe
+      id-token: write
 
     steps:
       - name: Checkout code
