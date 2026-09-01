@@ -1,6 +1,9 @@
 ⚡ EcoEdge AI: Dynamic Neural Network Optimization Framework
 ===========================================================
 
+[![PyPI version](https://badge.fury.io/py/ecoedge-ai.svg)](https://badge.fury.io/py/ecoedge-ai)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **EcoEdge AI** is a lightweight, end-to-end framework designed to optimize deep learning models for deployment on resource-constrained **Edge devices**.
 
 By combining **structural pruning**, **INT8 quantization**, and **knowledge distillation**, EcoEdge AI drastically reduces **memory footprint**, **latency**, and **power consumption** without sacrificing inference accuracy.
