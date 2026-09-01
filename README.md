@@ -4,6 +4,8 @@
 
 By combining **structural pruning**, **INT8 quantization**, and **knowledge distillation**, EcoEdge AI drastically reduces **memory footprint**, **latency**, and **power consumption** without sacrificing inference accuracy.
 
+---
+
 ## 🚀 Key Features
 
 ### Dynamic Pruning Engine
@@ -31,8 +33,34 @@ Clean Python architecture easily adaptable to:
 - Audio models
 - IoT tabular models
 
+---
+
 ## 🚀 Quick Start
 
 ```bash
 pip install ecoedge-ai
+```
+---
+
+## Usage Example
+
+```python
+import torch
+import torchvision.models as models
+
+from ecoedge.compression import Pruner
+from ecoedge.export import ONNXExporter
+
+# 1. Load your PyTorch model
+model = models.resnet18(pretrained=True)
+
+# 2. Prune 30% of Conv2d channels
+pruner = Pruner(model)
+
+pruned_model = pruner.prune_l1_structured(amount=0.3)
+
+# 3. Export to ONNX for Edge deployment
+exporter = ONNXExporter(pruned_model)
+
+exporter.export("resnet18_edge.onnx")
 ```
