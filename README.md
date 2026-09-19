@@ -4,7 +4,6 @@
 [![PyPI version](https://badge.fury.io/py/ecoedge-ai.svg)](https://badge.fury.io/py/ecoedge-ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xGCFo07ijkGJ-fy1zJheygDQzNnPRh2R)
-![Benchmarks](benchmark_results.png)
 
 **EcoEdge AI** is a lightweight, end-to-end framework designed to optimize deep learning models for deployment on resource-constrained **Edge devices**.
 
@@ -50,6 +49,8 @@ EcoEdge AI drastically reduces edge model footprints and inference times using d
 | **Inference Latency** | 18.10 ms | **6.70 ms** | **+63% Speedup** |
 | **Model File Size** | 42.69 MB | **15.79 MB** | **-63% Memory** |
 | **Execution Target** | CPU Baseline | CPU Edge Optimized | High Efficiency |
+
+![Benchmarks](benchmark_results.png)
 
 ## 📜 License
 ----------
