@@ -13,35 +13,27 @@ By combining **structural pruning**, **INT8 quantization**, and **knowledge dist
 --------------
 
 ### 1\. Installation
-```
+```bash
 pip install ecoedge-ai
 ```
 
 ### 2\. Basic Usage (Scikit-Learn Style)
 
-```
+```python
 import torch
-
 import torchvision.models as models
-
-from ecoedge.compression import Pruner
-
-from ecoedge.export import ONNXExporter
+from ecoedge_ai.compression import StructuredPruner
+from ecoedge_ai.export import ONNXExporter
 
 # Load your PyTorch model
-
 model = models.resnet18(pretrained=True)
 
 # Prune 30% of Conv2d channels
-
-pruner = Pruner(model)
-
+pruner = StructuredPruner(model)
 pruned_model = pruner.prune_l1_structured(amount=0.3)
 
 # Export to ONNX for Edge deployment
-
 exporter = ONNXExporter(pruned_model)
-
 exporter.export("resnet18_edge.onnx")
 ```
 
