@@ -1,4 +1,4 @@
-![Logo](logo.jpg)
+<img src="logo.jpg" width="5%">
 
 # ⚡ EcoEdge AI: Dynamic Neural Network Optimization Framework
 
