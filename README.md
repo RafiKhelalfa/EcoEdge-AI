@@ -73,7 +73,7 @@ Tested on a standard edge CPU baseline using ResNet18:
 
 - [x] L1-based Structural Pruning (Conv2d)
 - [x] Seamless ONNX Export pipeline
-- [ ] Post-Training Static INT8 Quantization (PTQ)
+- [x] Post-Training Static INT8 Quantization (PTQ)
 - [ ] Knowledge Distillation training wrapper
 
 ---
