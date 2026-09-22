@@ -85,3 +85,6 @@ Distributed under the **MIT License**. See [`LICENSE`](https://github.com/RafiKh
 ## 🤝 Support & Sponsors
 
 If EcoEdge AI helped you save cloud costs or optimize your local models, please consider **starring the repository** or **sponsoring the project** to support further development!
+
+> ⚖️ **Legal Notice:** Since the lead developer is 13 years old, this Ko-fi page and all received support are legally managed and processed by his father (legal guardian).
+
