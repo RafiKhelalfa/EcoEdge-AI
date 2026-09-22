@@ -1,4 +1,4 @@
-<img src="logo.png" width="10%">
+<img src="logo.png" width="10%"> 
 
 # ⚡ EcoEdge AI: Dynamic Neural Network Optimization Framework
 
