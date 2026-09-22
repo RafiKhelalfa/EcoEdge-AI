@@ -3,7 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/ecoedge-ai.svg)](https://badge.fury.io/py/ecoedge-ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xGCFo07ijkGJ-fy1zJheygDQzNnPRh2R)
-[![Sponsor](https://shields.io)](https://github.com)
+[![Sponsor ()](https://shields.io)](https://ko-fi.com/ecoedgeai)
 
 **EcoEdge AI** is a lightweight, production-ready framework designed to compress and accelerate deep learning models for resource-constrained **Edge devices** (mobile, IoT, embedded CPU/GPU).
 
