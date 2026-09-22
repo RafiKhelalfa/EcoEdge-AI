@@ -1,3 +1,5 @@
+![Logo](logo.jpg)
+
 # ⚡ EcoEdge AI: Dynamic Neural Network Optimization Framework
 
 [![PyPI version](https://badge.fury.io/py/ecoedge-ai.svg)](https://badge.fury.io/py/ecoedge-ai)
