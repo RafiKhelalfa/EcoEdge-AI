@@ -77,7 +77,7 @@ Tested on a standard edge CPU baseline using ResNet18:
 - [x] Seamless ONNX Export pipeline
 - [x] Post-Training Static INT8 Quantization (PTQ)
 - [x] Knowledge Distillation training wrapper
-- [ ] Compression on a website via it's servers.
+- [ ] Web-based compression tool via cloud API / remote servers.
 
 ---
 
