@@ -4,7 +4,7 @@
 
 [![PyPI version](https://badge.fury.io/py/ecoedge-ai.svg)](https://badge.fury.io/py/ecoedge-ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Hugging Face Space]([https://img.shields.io/badge/Website-Online-2ecc71?style=for-the-badge&logo=google-chrome&logoColor=white](https://huggingface.co/spaces/RafiKhelalfa/EcoEdge-AI))
+[![Hugging Face Space](https://img.shields.io/badge/Website-Online-2ecc71?style=for-the-badge&logo=google-chrome&logoColor=white)](https://huggingface.co/spaces/RafiKhelalfa/EcoEdge-AI)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xGCFo07ijkGJ-fy1zJheygDQzNnPRh2R)
 [![Sponsor (Legal Guardian Account)](http://img.shields.io/badge/Sponsor%20via%20Guardian-%E2%9D%A4-ff69b4)](https://ko-fi.com/ecoedgeai)
 
