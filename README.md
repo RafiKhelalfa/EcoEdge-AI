@@ -4,6 +4,7 @@
 
 [![PyPI version](https://badge.fury.io/py/ecoedge-ai.svg)](https://badge.fury.io/py/ecoedge-ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Hugging Face Space](https://shields.io)](https://huggingface.co/spaces/RafiKhelalfa/EcoEdge-AI))
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xGCFo07ijkGJ-fy1zJheygDQzNnPRh2R)
 [![Sponsor (Legal Guardian Account)](http://img.shields.io/badge/Sponsor%20via%20Guardian-%E2%9D%A4-ff69b4)](https://ko-fi.com/ecoedgeai)
 
@@ -20,6 +21,7 @@ Deploying modern AI models on edge devices is hard due to hardware limitations. 
 *   **⚡ Heavy Acceleration:** Up to +63% inference speedup on standard CPUs.
 *   **📉 Ultra Lightweight:** Divide your model file size by more than 2x.
 *   **🛠️ Production Ready:** One-click automated export to ONNX format.
+*   **🌐 Web Dashboard:** Upload your model and compress it live on cloud hardware.
 
 ---
 
@@ -38,19 +40,20 @@ Optimize, compress, and export a model in less than 10 lines of code:
 ```python
 import torch
 import torchvision.models as models
-from ecoedge_ai.compression import StructuredPruner
-from ecoedge_ai.export import ONNXExporter
+from ecoedge.compression.pruner import StructuredPruner
+from ecoedge.export.onnx_exporter import ONNXExporter
 
 # 1. Load your standard PyTorch model
 model = models.resnet18(pretrained=True)
 
 # 2. Prune 30% of less important Conv2d channels
 pruner = StructuredPruner(model)
-pruned_model = pruner.prune_l1_structured(amount=0.3)
+pruned_model = pruner.apply_structured_pruning(amount=0.3)
 
-# 3. Export to optimized INT8 ONNX for Edge deployment
-exporter = ONNXExporter(pruned_model)
-exporter.export("resnet18_edge.onnx")
+# 3. Export to optimized ONNX for Edge deployment using a dummy input tensor
+dummy_input = torch.randn(1, 3, 224, 224)
+exporter = ONNXExporter()
+exporter.export_to_onnx(model=pruned_model, dummy_input=dummy_input, export_path="resnet18_edge.onnx")
 
 print("⚡ Model successfully optimized and exported!")
 ```
@@ -77,7 +80,7 @@ Tested on a standard edge CPU baseline using ResNet18:
 - [x] Seamless ONNX Export pipeline
 - [x] Post-Training Static INT8 Quantization (PTQ)
 - [x] Knowledge Distillation training wrapper
-- [ ] Web-based compression tool via cloud API / remote servers.
+- [x] Web-based compression tool via cloud API / remote servers.
 
 ---
 
@@ -90,4 +93,3 @@ Distributed under the **MIT License**. See [`LICENSE`](https://github.com/RafiKh
 If EcoEdge AI helped you save cloud costs or optimize your local models, please consider **starring the repository** or **sponsoring the project** to support further development!
 
 > ⚖️ **Legal Notice:** Since the lead developer is 13 years old, this Ko-fi page and all received support are legally managed and processed by his father (legal guardian).
-
