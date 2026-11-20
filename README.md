@@ -1,8 +1,10 @@
-# EcoEdge-AI 🌿
+
 
 <p align="center">
   <img src="logo.png" alt="EcoEdge-AI Logo" width="10%">
 </p>
+
+# EcoEdge-AI 🌿
 
 <p align="center">
   <a href="https://pypi.org/project/ecoedge-ai/"><img src="https://img.shields.io/pypi/v/ecoedge-ai.svg" alt="PyPI Version"></a>
@@ -50,6 +52,8 @@ pip install ecoedge-ai
 ```
 
 ## 📊 Benchmarks
+
+<img src="benchmark_results.png" alt="Benchmark">
 
 ---
 
