@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://pypi.org/project/ecoedge-ai/"><img src="https://img.shields.io/pypi/v/ecoedge-ai.svg" alt="PyPI Version"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <a href="https://ko-fi.com/EcoEdge-AI"><img src="https://img.shields.io/badge/Ko--fi-Support%20Me-ff5e5b?logo=ko-fi&logoColor=white" alt="Ko-fi"></a>
+  <a href="https://ko-fi.com/ecoedgeai"><img src="https://img.shields.io/badge/Ko--fi-Support%20Me-ff5e5b?logo=ko-fi&logoColor=white" alt="Ko-fi"></a>
   <img src="https://img.shields.io/badge/Creator-Rafi%20Khelalfa-blue" alt="Creator">
 </p>
 
