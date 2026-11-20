@@ -2,9 +2,9 @@ import onnx
 
 def sanitize_pruned_onnx_model(onnx_model_path: str, output_path: str):
     """
-    Parcourt le graphe ONNX pour supprimer les initializers orphelins
-    et nettoyer les attributs de shape faussés par le pruning structuré.
-    Empêche les décalages de tenseurs (silent tensor drift) sur l'Edge.
+    Traverses the ONNX graph to remove orphaned initializers
+    and clean up shape attributes distorted by structured pruning.
+    Prevents silent tensor drift on Edge devices.
     """
     model = onnx.load(onnx_model_path)
     graph = model.graph
@@ -20,4 +20,4 @@ def sanitize_pruned_onnx_model(onnx_model_path: str, output_path: str):
     graph.initializer.extend(initializers_to_keep)
     
     onnx.save(model, output_path)
-    print(f"[EcoEdge-AI] Modèle ONNX nettoyé et sauvegardé avec succès : {output_path}")
+    print(f"[EcoEdge-AI] Cleaned ONNX model successfully saved to: {output_path}")

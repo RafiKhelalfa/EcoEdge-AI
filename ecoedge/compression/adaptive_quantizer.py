@@ -3,8 +3,8 @@ import torch.nn as nn
 
 class AdaptivePiecewiseQuantizer(nn.Module):
     """
-    Quantification non-linéaire par morceaux avec seuillage doux (soft-thresholding)
-    pour préserver la dynamique des poids éparses issus du pruning sans saturer le NPU.
+    Piecewise non-linear quantization with soft-thresholding
+    to preserve sparse weight dynamics from pruning without saturating the NPU.
     """
     def __init__(self, model: nn.Module, bits: int = 8):
         super().__init__()
@@ -27,4 +27,4 @@ class AdaptivePiecewiseQuantizer(nn.Module):
                         if scale > 0:
                             quantized = torch.clamp(torch.round(param / scale), self.qmin, self.qmax)
                             param.copy_(quantized * scale)
-        print(f"[EcoEdge-AI] Quantification adaptative INT{self.bits} appliquée avec succès.")
+        print(f"[EcoEdge-AI] Adaptive INT{self.bits} quantization successfully applied.")

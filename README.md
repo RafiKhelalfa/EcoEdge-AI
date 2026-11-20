@@ -1,95 +1,39 @@
-<img src="logo.png" width="10%"> 
+# EcoEdge-AI 🌿
 
-# ⚡ EcoEdge AI: Dynamic Neural Network Optimization Framework
-
-[![PyPI version](https://badge.fury.io/py/ecoedge-ai.svg?style=flat)](https://badge.fury.io/py/ecoedge-ai)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](https://opensource.org/licenses/MIT)
-[![Hugging Face Space](https://img.shields.io/badge/Website-Online-2ecc71?style=flat&logo=google-chrome&logoColor=white)](https://huggingface.co/spaces/RafiKhelalfa/EcoEdge-AI)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg?style=flat)](https://colab.research.google.com/drive/1xGCFo07ijkGJ-fy1zJheygDQzNnPRh2R)
-[![Sponsor (Legal Guardian Account)](http://img.shields.io/badge/Sponsor%20via%20Guardian-%E2%9D%A4-ff69b4?style=flat)](https://ko-fi.com/ecoedgeai)
-
-**EcoEdge AI** is a lightweight, production-ready framework designed to compress and accelerate deep learning models for resource-constrained **Edge devices** (mobile, IoT, embedded CPU/GPU).
-
-By seamlessly combining **structural pruning**, **INT8 quantization**, and **knowledge distillation**, EcoEdge AI drastically reduces memory footprint and latency without sacrificing your model's accuracy.
+EcoEdge-AI is a cutting-edge Python framework designed for efficient AI model compression, structured pruning, adaptive quantization, and ONNX export optimized for edge devices.
 
 ---
 
-## 💡 Why EcoEdge AI?
+## 🚀 New Advanced Features (Branch: `feature/advanced-edge-modules`)
 
-Deploying modern AI models on edge devices is hard due to hardware limitations. EcoEdge AI solves this by giving you a **Scikit-Learn style API** to compress PyTorch models in minutes. 
+### 1. ONNX Graph Surgeon (`ecoedge/export/graph_surgeon.py`)
+* **Problem Solved:** Prevents **Ghost Gradient Mismatch** and **silent tensor drift** on Edge devices caused by orphaned initializers and distorted shape attributes after structured pruning and dynamic axis ONNX export.
+* **Usage:**
+```python
+from ecoedge.export.graph_surgeon import sanitize_pruned_onnx_model
 
-*   **⚡ Heavy Acceleration:** Up to +63% inference speedup on standard CPUs.
-*   **📉 Ultra Lightweight:** Divide your model file size by more than 2x.
-*   **🛠️ Production Ready:** One-click automated export to ONNX format.
-*   **🌐 Web Dashboard:** Upload your model and compress it live on cloud hardware.
+sanitize_pruned_onnx_model("model.onnx", "ecoedge_optimized.onnx")
+```
+
+### 2. Adaptive Piecewise Quantizer (`ecoedge/compression/adaptive_quantizer.py`)
+* **Problem Solved:** Eliminates **Zero-Point Drift** and NPU register saturation when quantizing sparse, bimodal weight distributions resulting from fine-grained pruning.
+* **Usage:**
+```python
+from ecoedge.compression.adaptive_quantizer import AdaptivePiecewiseQuantizer
+
+quantizer = AdaptivePiecewiseQuantizer(model, bits=8)
+quantizer.apply_soft_threshold_quantization()
+```
 
 ---
 
-## 🚀 Quick Start
+## 📦 Installation & PyPI Release
 
-### 1. Installation
+To build and update your package on PyPI:
 
 ```bash
-pip install ecoedge-ai
+pip install --upgrade build twine
+rm -rf build dist *.egg-info
+python -m build
+python -m twine upload dist/*
 ```
-
-### 2. End-to-End Optimization Example
-
-Optimize, compress, and export a model in less than 10 lines of code:
-
-```python
-import torch
-import torchvision.models as models
-from ecoedge.compression.pruner import StructuredPruner
-from ecoedge.export.onnx_exporter import ONNXExporter
-
-# 1. Load your standard PyTorch model
-model = models.resnet18(pretrained=True)
-
-# 2. Prune 30% of less important Conv2d channels
-pruner = StructuredPruner(model)
-pruned_model = pruner.apply_structured_pruning(amount=0.3)
-
-# 3. Export to optimized ONNX for Edge deployment using a dummy input tensor
-dummy_input = torch.randn(1, 3, 224, 224)
-exporter = ONNXExporter()
-exporter.export_to_onnx(model=pruned_model, dummy_input=dummy_input, export_path="resnet18_edge.onnx")
-
-print("⚡ Model successfully optimized and exported!")
-```
-
----
-
-## 📊 Performance & Benchmarks
-
-Tested on a standard edge CPU baseline using ResNet18:
-
-| **Metric** | **Baseline (FP32)** | **EcoEdge AI (Optimized)** | **Improvement** |
-| --- | --- | --- | --- |
-| **Inference Latency** | 18.10 ms | **6.70 ms** | **🚀 +63% Speedup** |
-| **Model File Size** | 42.69 MB | **15.79 MB** | **📉 -63% Memory** |
-| **Execution Target** | CPU Baseline | CPU Edge Optimized | High Efficiency |
-
-![Benchmarks](benchmark_results.png)
-
----
-
-## 🛠️ Features RoadMap
-
-- [x] L1-based Structural Pruning (Conv2d)
-- [x] Seamless ONNX Export pipeline
-- [x] Post-Training Static INT8 Quantization (PTQ)
-- [x] Knowledge Distillation training wrapper
-- [x] Web-based compression tool via cloud API / remote servers.
-
----
-
-## 📜 License
-
-Distributed under the **MIT License**. See [`LICENSE`](https://github.com/RafiKhelalfa/EcoEdge-AI/blob/main/LICENSE) for more information.
-
-## 🤝 Support & Sponsors
-
-If EcoEdge AI helped you save cloud costs or optimize your local models, please consider **starring the repository** or **sponsoring the project** to support further development!
-
-> ⚖️ **Legal Notice:** Since the lead developer is 13 years old, this Ko-fi page and all received support are legally managed and processed by his father (legal guardian).
