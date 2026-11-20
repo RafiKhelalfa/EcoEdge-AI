@@ -1,10 +1,19 @@
 # EcoEdge-AI 🌿
 
-EcoEdge-AI is a cutting-edge Python framework designed for efficient AI model compression, structured pruning, adaptive quantization, and ONNX export optimized for edge devices.
+<p align="center">
+  <img src="logo.png" alt="EcoEdge-AI Logo" width="10%">
+</p>
+
+<p align="center">
+  <a href="https://pypi.org/project/ecoedge-ai/"><img src="https://img.shields.io/pypi/v/ecoedge-ai.svg" alt="PyPI Version"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+</p>
+
+EcoEdge-AI is a lightweight Python framework designed to compress, quantize, and optimize deep learning models for edge devices with minimal accuracy loss.
 
 ---
 
-## 🚀 New Advanced Features (Branch: `feature/advanced-edge-modules`)
+## 🚀 New Advanced Features (Advanced Edge Modules)
 
 ### 1. ONNX Graph Surgeon (`ecoedge/export/graph_surgeon.py`)
 * **Problem Solved:** Prevents **Ghost Gradient Mismatch** and **silent tensor drift** on Edge devices caused by orphaned initializers and distorted shape attributes after structured pruning and dynamic axis ONNX export.
@@ -13,27 +22,37 @@ EcoEdge-AI is a cutting-edge Python framework designed for efficient AI model co
 from ecoedge.export.graph_surgeon import sanitize_pruned_onnx_model
 
 sanitize_pruned_onnx_model("model.onnx", "ecoedge_optimized.onnx")
+
 ```
 
 ### 2. Adaptive Piecewise Quantizer (`ecoedge/compression/adaptive_quantizer.py`)
+
 * **Problem Solved:** Eliminates **Zero-Point Drift** and NPU register saturation when quantizing sparse, bimodal weight distributions resulting from fine-grained pruning.
 * **Usage:**
+
 ```python
 from ecoedge.compression.adaptive_quantizer import AdaptivePiecewiseQuantizer
 
 quantizer = AdaptivePiecewiseQuantizer(model, bits=8)
 quantizer.apply_soft_threshold_quantization()
+
 ```
 
 ---
 
-## 📦 Installation & PyPI Release
+## 📦 Installation
 
-To build and update your package on PyPI:
+Install EcoEdge-AI directly from PyPI or your local repository:
 
 ```bash
-pip install --upgrade build twine
-rm -rf build dist *.egg-info
-python -m build
-python -m twine upload dist/*
+pip install ecoedge-ai
+
 ```
+
+## 📊 Benchmarks
+
+---
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
